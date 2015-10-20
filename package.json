@@ -1,0 +1,35 @@
+{
+  "name": "esu",
+  "version": "0.1.0",
+  "description": "Entity-System-Universe, a pattern similar to entity-component-system.",
+  "keywords": [
+    "entity",
+    "system",
+    "universe",
+    "component",
+    "ecs"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R nyan"
+  },
+  "author": "Samm Cooper <samm@sublight.ca>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.3.0"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koopero/esu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/koopero/esu/issues"
+  },
+  "homepage": "https://github.com/koopero/esu"
+}

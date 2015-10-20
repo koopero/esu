@@ -1,16 +1,3 @@
-
-## Entity
-
-## System
-
-## Universe
-
-## Component
-
-In **ESU**, components are given less importance than in ECS architectures. They are simply data values stored on Entities.
-
-
-
 # Example
 
 ```javascript

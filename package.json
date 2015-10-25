@@ -1,6 +1,6 @@
 {
   "name": "esu",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Entity-System-Universe, a pattern similar to entity-component-system.",
   "keywords": [
     "entity",

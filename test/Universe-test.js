@@ -182,4 +182,31 @@ describe('Universe', function() {
 
     } )
   })
+
+  describe('events', function () {
+    describe('addComponent', function () {
+      it('will fire on entity creation', function () {
+        var universe = Universe()
+          , initValue = {}
+          , fired = false
+          , entity
+
+        universe.system( 'test', {
+          addComponent: function ( entity, value ) {
+            assert.equal( value, initValue )
+            fired = true
+          }
+        })
+
+        entity = universe.entity({
+          test: initValue
+        })
+
+
+        assert( fired )
+
+      })
+    })
+  })
+
 } )

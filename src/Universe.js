@@ -72,13 +72,15 @@ Universe.prototype.entity = function ( conf ) {
     Object.defineProperty( entity, 'universe', { value: universe } )
     Object.defineProperty( entity, 'id', { value: id, enumerable: true } )
 
-    // universe.mapSystems( function ( system, key ) {
-    // var componentValue = entityConf[ key ]
-    //   if ( !_.isUndefined( componentValue ) ) {
-    //     entity.addComponent( key, componentValue )
-    //   }
-    // })
     universe.entities[id] = entity
+
+
+    universe.mapSystems( function ( system, key ) {
+      var componentValue = init[ key ]
+      if ( componentValue !== undefined && componentValue !== null && 'function' === typeof system.addComponent ) {
+        system.addComponent( entity, componentValue )
+      }
+    })
 
     return entity
   }
@@ -187,4 +189,13 @@ Universe.prototype.system = function ( key, value ) {
 
   return systems[key]
 
+}
+
+Universe.prototype.mapSystems = function ( iteree ) {
+  var universe = this
+    , systems = universe.systems
+
+  return _.map( systems, function ( system, key ) {
+    return iteree.call( universe, system, key )
+  })
 }
